@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ping-rce:
+    build: ../
+    environment:
+      GZCTF_FLAG: "flag{ping_rce_lab_demo}"
+    ports:
+      - 8082:80
+    restart: unless-stopped

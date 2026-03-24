@@ -1,0 +1,11 @@
+name: code-audit-lab
+services:
+  code-audit-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      GZCTF_FLAG: "flag{code-audit-lab-demo-00000000}"
+    ports:
+      - 8087:80
+    restart: unless-stopped

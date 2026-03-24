@@ -1,0 +1,12 @@
+# 默认使用 ../Dockerfile（Alpine，无 PECL expect）。
+# 若需演示 expect://，请改用：docker build -f Dockerfile.with-expect -t xxe-lab-expect ..
+# 并在此将 image: xxe-lab-expect 或修改 build 指向 with-expect 文件。
+version: '3'
+services:
+  xxe-lab:
+    build: ../
+    environment:
+      GZCTF_FLAG: "flag{a63b4d37-7681-4850-b6a7-0d7109febb19}"
+    ports:
+      - 8081:80
+    restart: unless-stopped
